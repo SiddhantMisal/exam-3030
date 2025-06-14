@@ -23,7 +23,7 @@ pipeline {
 
         stage('remove existing service') {
             steps {
-                sh 'docker service rm --force nginx'
+                sh 'docker service rm  nginx'
             }
         }
         
