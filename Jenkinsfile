@@ -23,13 +23,13 @@ pipeline {
 
         stage('remove existing service') {
             steps {
-                sh 'docker service rm nginx'
+                sh 'docker service rm --force nginx'
             }
         }
         
-	stage('creat service') {
+	stage('create service') {
             steps {
-                sh 'docker service create --name exam  -p 5000:5000 --replicas 5 siddhant1001/nginx'
+                sh 'docker service create --name nginx  -p 5000:5000 --replicas 5 siddhant1001/nginx'
             }
         }
     }
